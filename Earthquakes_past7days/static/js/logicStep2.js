@@ -29,7 +29,7 @@ let map = L.map('mapid', {
 });
 
 // Retrieve the earthquake GeoJSON data.
-d3.json("https://github.com/max-schweikl/Mapping_Earthquakes/blob/Earthquakes_past7days/all_week.geojson").then(function(data) {
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
     L.geoJSON(data, {
         // We turn each feature into a circleMarker on the map.
     pointToLayer: function(feature, latlng) {

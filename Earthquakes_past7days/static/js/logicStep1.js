@@ -30,8 +30,7 @@ let map = L.map('mapid', {
 
 // Retrieve the earthquake GeoJSON data.
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
-  // Creating a GeoJSON layer with the retrieved data.
-  L.geoJSON(data).addTo(map);
+    L.geoJSON(data).addTo(map);
 });
 
 // Pass our map layers into our layer control and add the layer control to the map.
