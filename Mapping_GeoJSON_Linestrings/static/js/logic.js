@@ -35,5 +35,12 @@ let torontoData = "https://raw.githubusercontent.com/max-schweikl/Mapping_Earthq
 d3.json(torontoData).then(function(data) {
     console.log(data);
   // Creating a GeoJSON layer with the retrieved data.
-  L.geoJSON(data).addTo(map);
+  L.geoJSON(data, {
+      style: myStyle,
+      onEachFeature: function(feature, layer) {
+          layer.bindPopup("<h3> Airline: " + feature.properties.airline + "</h3> <hr><h3> Destination: "
+          + feature.properties.dst + "</h3>");
+      }
+  })
+  .addTo(map);
 });
